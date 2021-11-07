@@ -31,14 +31,16 @@ def Data_Preparation(noise_version=1):
         qtdb = pickle.load(input)
 
     # Load NSTDB
-    with open('data/NoiseBWL.pkl', 'rb') as input:
+    with open('data/NoiseALL.pkl', 'rb') as input:
         nstdb = pickle.load(input)
 
     #####################################
     # NSTDB
     #####################################
 
-    [ma_signals, _ ] = nstdb
+    [bw_signals, em_signals, ma_signals] = nstdb
+    bw_signals = np.array(bw_signals)
+    em_signals = np.array(em_signals)
     ma_signals = np.array(ma_signals)
 
 
